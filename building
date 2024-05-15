@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source .curname
+stack build 3Q:exe:$CURRENT_ATCODER_EXE_NAME

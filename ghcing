@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source .curname
+stack exec -- ghci app/$CURRENT_ATCODER_EXE_NAME/Main.hs

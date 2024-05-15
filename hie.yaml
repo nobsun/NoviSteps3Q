@@ -1,0 +1,16 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "3Q:lib"
+
+    - path: "./app/Main.hs"
+      component: "3Q:exe:3Q"
+
+    - path: "./test/spec.hs"
+      component: "3Q:test:3Q-test"
+  
+    - path: "./test/LibSpec.hs"
+      component: "3Q:test:3Q-test"
+  
+    - path: "./test/doctests.hs"
+      component: "3Q:test:3Q-doctest"
