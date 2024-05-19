@@ -22,6 +22,7 @@ import Data.Function
 import Data.List
 import Text.Printf
 
+import Data.Array.ST qualified as ST
 import Data.IntMap qualified as IM
 import Data.IntSet qualified as IS
 import Data.Map qualified as M
@@ -36,16 +37,35 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Solver = () -> ()
+type Solver = (I,[I]) -> [[O]]
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (n,as) -> case (IM.fromList (zip [1 ..] as), IM.fromList (zip as [1 ..])) of
+        (aa,pa) -> iter aa pa [] 1
+        where
+            iter aa pa ps = \ case
+                i | n < i   -> reverse ps
+                  | otherwise -> case fromJust $ IM.lookup i aa of
+                    j | i == j    -> iter aa pa ps (succ i)
+                      | otherwise -> case fromJust $ IM.lookup i pa of
+                        k             -> case (IM.insert i i aa, IM.insert i i pa) of
+                            (aa',pa')     -> iter (IM.insert k j aa') (IM.insert j k pa') ([i, k] : ps) (succ i)
+
+
+
+-- exchange :: IM.IntMap Int -> Int -> (IM.IntMap Int, Maybe [Int])
+-- exchange m i = case fromJust $ IM.lookup i m of
+--     j | i == j    -> (m, Nothing)
+--       | otherwise -> case IM.updateLookupWithKey (\ _ _ -> Just j) j m of
+--         (Just k, m') -> (IM.update (const (Just k)) i m',Just $ bool [i,j] [j,i] (j < i))
+--         _            -> impossible  
+            
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f () of
-        _rr -> [[]]
+    [n]:as:_ -> case f (n,as) of
+        r -> [length r] : r
     _   -> error "wrap: invalid input format"
 
 main :: IO ()

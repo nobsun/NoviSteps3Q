@@ -32,6 +32,7 @@ dependencies:
 - gloss
 - array
 - containers
+- multiset
 - free
 - recursion-schemes
 - vector
@@ -63,6 +64,38 @@ library:
   source-dirs: src
 
 executables:
+  manyreplacement:
+    main:            Main.hs
+    source-dirs:     app/manyreplacement
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - 3Q
+
+  diversityofscores:
+    main:            Main.hs
+    source-dirs:     app/diversityofscores
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - 3Q
+
+  onetimeswap:
+    main:            Main.hs
+    source-dirs:     app/onetimeswap
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - 3Q
+
+  sort:
+    main:            Main.hs
+    source-dirs:     app/sort
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - 3Q
+
   3Q:
     main:                Main.hs
     source-dirs:         app

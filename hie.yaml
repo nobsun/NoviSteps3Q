@@ -6,11 +6,35 @@ cradle:
     - path: "./app/Main.hs"
       component: "3Q:exe:3Q"
 
-    - path: "./test/spec.hs"
-      component: "3Q:test:3Q-test"
-  
-    - path: "./test/LibSpec.hs"
-      component: "3Q:test:3Q-test"
-  
-    - path: "./test/doctests.hs"
+    - path: "./app/Paths_3Q.hs"
+      component: "3Q:exe:3Q"
+
+    - path: "./app/diversityofscores/Main.hs"
+      component: "3Q:exe:diversityofscores"
+
+    - path: "./app/diversityofscores/Paths_3Q.hs"
+      component: "3Q:exe:diversityofscores"
+
+    - path: "./app/manyreplacement/Main.hs"
+      component: "3Q:exe:manyreplacement"
+
+    - path: "./app/manyreplacement/Paths_3Q.hs"
+      component: "3Q:exe:manyreplacement"
+
+    - path: "./app/onetimeswap/Main.hs"
+      component: "3Q:exe:onetimeswap"
+
+    - path: "./app/onetimeswap/Paths_3Q.hs"
+      component: "3Q:exe:onetimeswap"
+
+    - path: "./app/sort/Main.hs"
+      component: "3Q:exe:sort"
+
+    - path: "./app/sort/Paths_3Q.hs"
+      component: "3Q:exe:sort"
+
+    - path: "./test"
       component: "3Q:test:3Q-doctest"
+
+    - path: "./test"
+      component: "3Q:test:3Q-test"

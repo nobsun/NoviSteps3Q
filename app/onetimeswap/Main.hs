@@ -33,19 +33,33 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
+type I = String
 type O = Int
 
-type Solver = () -> ()
+type Solver = I -> O
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    s -> case elems $ accumArray (+) (0 :: Int) ('a','z') $ (,1) <$> s of
+        fqs -> case (sum &&& foldl phi 0) fqs of
+            (u,v) -> bool succ id (v == 0) (u * pred u `div` 2 - v)
+            where
+                phi a b = a + b * pred b `div` 2
 
+{- --
+solve = \ case
+    s -> case snd $ unzip $ runLength $ sort s of
+        ls -> case sum ls of
+            k -> case foldl phi 0 ls of
+                c | c == 0    -> k * pred k `div` 2
+                  | otherwise -> k * pred k `div` 2 - pred c
+            where
+                phi x y = x + (y * pred y) `div` 2
+-- -}
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f () of
-        _rr -> [[]]
+    [s]:_ -> case f s of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()

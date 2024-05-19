@@ -36,16 +36,28 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Solver = () -> ()
+type Solver = (I,[[I]]) -> [O]
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (n,as) -> snd $ mapAccumL phi (1, (IM.singleton 0 n, IM.empty)) as
+    where
+        phi (c,(vs,us)) = \ case
+            [a,b] -> case IM.findWithDefault 0 a us of
+                u -> case u + b of
+                    u' -> case IM.insert a u' us of
+                        us' -> case maybe (succ c, IM.insert u' 1 vs) 
+                                          ((c,) . (flip (IM.insert u') vs . succ))
+                                          (IM.lookup u' vs) of
+                            (c',vs') -> case vs IM.! u of
+                                1 -> ((pred c', (IM.delete u vs', us')), pred c')
+                                m -> ((c', (IM.insert u (pred m) vs', us')), c')
+            _ -> invalid
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f () of
-        _rr -> [[]]
+    [n,_]:as -> case f (n,as) of
+        r -> (:[]) <$> r
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
