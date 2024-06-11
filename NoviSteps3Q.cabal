@@ -1,0 +1,388 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           NoviSteps3Q
+version:        0.0.0
+description:    Please see the README on GitHub at <https://github.com/nobsun/NoviSteps3Q#readme>
+homepage:       https://github.com/nobsun/NoviSteps3Q#readme
+bug-reports:    https://github.com/nobsun/NoviSteps3Q/issues
+author:         Nobuo Yamashita
+maintainer:     nobsun@sampou.org
+copyright:      © 2024, Nobuo Yamashita
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/nobsun/NoviSteps3Q
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      src
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 7quppercaseandlowercase
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/7quppercaseandlowercase
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable NoviSteps3Q
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable diversityofscores
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/diversityofscores
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable manyreplacement
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/manyreplacement
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable onetimeswap
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/onetimeswap
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable sort
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/sort
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+test-suite NoviSteps3Q-doctest
+  type: exitcode-stdio-1.0
+  main-is: doctests.hs
+  other-modules:
+      LibSpec
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      test
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+test-suite NoviSteps3Q-test
+  type: exitcode-stdio-1.0
+  main-is: spec.hs
+  other-modules:
+      LibSpec
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      test
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , doctest
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , multiset
+    , recursion-schemes
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021

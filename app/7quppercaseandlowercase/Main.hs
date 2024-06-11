@@ -33,24 +33,19 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = String
-type O = String
+type I = Int
+type O = Int
 
-type Solver = (I, [[Char]]) -> O
+type Solver = () -> ()
 
 solve :: Solver
 solve = \ case
-    (s,cds) -> case listArray ('a','z') $ foldl phi ['a'..'z'] cds of
-        aa -> map (aa !) s
-        where
-            phi as = \ case
-                [c,d] -> map (bool d <*> (c /=)) as
-                _ -> invalid
+    () -> ()
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:[s]:_:css -> case f (s, map (map head) css) of
-        r -> [[r]]
+    _:_ -> case f () of
+        _rr -> [[]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()

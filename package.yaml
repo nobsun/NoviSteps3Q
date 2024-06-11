@@ -1,6 +1,6 @@
-name:                3Q
+name:                NoviSteps3Q
 version:             0.0.0
-github:              nobsun/3Q
+github:              nobsun/NoviSteps3Q
 license:             BSD3
 author:              Nobuo Yamashita
 maintainer:          nobsun@sampou.org
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/nobsun/3Q#readme>
+description:         Please see the README on GitHub at <https://github.com/nobsun/NoviSteps3Q#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -64,13 +64,21 @@ library:
   source-dirs: src
 
 executables:
+  7quppercaseandlowercase:
+    main:               Main.hs
+    source-dirs:        app/7quppercaseandlowercase
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
   manyreplacement:
     main:            Main.hs
     source-dirs:     app/manyreplacement
     ghc-options:
     - -rtsopts
     dependencies:
-    - 3Q
+    - NoviSteps3Q
 
   diversityofscores:
     main:            Main.hs
@@ -78,7 +86,7 @@ executables:
     ghc-options:
     - -rtsopts
     dependencies:
-    - 3Q
+    - NoviSteps3Q
 
   onetimeswap:
     main:            Main.hs
@@ -86,7 +94,7 @@ executables:
     ghc-options:
     - -rtsopts
     dependencies:
-    - 3Q
+    - NoviSteps3Q
 
   sort:
     main:            Main.hs
@@ -94,9 +102,9 @@ executables:
     ghc-options:
     - -rtsopts
     dependencies:
-    - 3Q
+    - NoviSteps3Q
 
-  3Q:
+  NoviSteps3Q:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -104,10 +112,10 @@ executables:
     # - -threaded
     # - -with-rtsopts=-N
     dependencies:
-    - 3Q
+    - NoviSteps3Q
 
 tests:
-  3Q-test:
+  NoviSteps3Q-test:
     main:                spec.hs
     source-dirs:         test
     # ghc-options:
@@ -115,11 +123,11 @@ tests:
     # - -rtsopts
     # - -with-rtsopts=-N
     dependencies:
-    - 3Q
+    - NoviSteps3Q
     - hspec
     - main-tester
 
-  3Q-doctest:
+  NoviSteps3Q-doctest:
     main:                doctests.hs
     source-dirs:         test
     # ghc-options:
@@ -127,5 +135,5 @@ tests:
     # - -rtsopts
     # - -with-rtsopts=-N
     dependencies:
-    - 3Q
+    - NoviSteps3Q
     - doctest
