@@ -50,53 +50,15 @@ library
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
-    , time
-    , unicode-show
-    , utf8-string
-    , vector
-  default-language: GHC2021
-
-executable 7quppercaseandlowercase
-  main-is: Main.hs
-  other-modules:
-      Paths_NoviSteps3Q
-  hs-source-dirs:
-      app/7quppercaseandlowercase
-  default-extensions:
-      ImplicitParams
-      ImportQualifiedPost
-      LambdaCase
-      LexicalNegation
-      MultiWayIf
-      NPlusKPatterns
-      OverloadedStrings
-      DataKinds
-      PolyKinds
-      NoStarIsType
-      TypeFamilyDependencies
-      UndecidableInstances
-  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
-  build-depends:
-      NoviSteps3Q
-    , aeson
-    , array
-    , base >=4.7 && <5
-    , bytestring
-    , containers
-    , doctest
-    , free
-    , gloss
-    , hspec
-    , main-tester
-    , multiset
-    , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -130,13 +92,15 @@ executable NoviSteps3Q
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -170,13 +134,15 @@ executable diversityofscores
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -210,13 +176,15 @@ executable manyreplacement
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -250,13 +218,15 @@ executable onetimeswap
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -290,13 +260,15 @@ executable sort
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -332,13 +304,15 @@ test-suite NoviSteps3Q-doctest
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string
@@ -374,13 +348,15 @@ test-suite NoviSteps3Q-test
     , base >=4.7 && <5
     , bytestring
     , containers
+    , directory
     , doctest
+    , filepath
     , free
     , gloss
     , hspec
     , main-tester
-    , multiset
     , recursion-schemes
+    , split
     , time
     , unicode-show
     , utf8-string

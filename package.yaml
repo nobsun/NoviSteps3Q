@@ -32,10 +32,12 @@ dependencies:
 - gloss
 - array
 - containers
-- multiset
 - free
 - recursion-schemes
 - vector
+- directory
+- filepath
+- split
 
 language: GHC2021
 
@@ -64,14 +66,6 @@ library:
   source-dirs: src
 
 executables:
-  7quppercaseandlowercase:
-    main:               Main.hs
-    source-dirs:        app/7quppercaseandlowercase
-    ghc-options:
-    - -rtsopts
-    dependencies:
-    - NoviSteps3Q
-
   manyreplacement:
     main:            Main.hs
     source-dirs:     app/manyreplacement
