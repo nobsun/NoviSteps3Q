@@ -3,6 +3,54 @@ cradle:
     - path: "./src"
       component: "NoviSteps3Q:lib"
 
+    - path: "./app/4qa16/Main.hs"
+      component: "NoviSteps3Q:exe:4qa16"
+
+    - path: "./app/4qa16/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:4qa16"
+
+    - path: "./app/4qfibonaccieasy/Main.hs"
+      component: "NoviSteps3Q:exe:4qfibonaccieasy"
+
+    - path: "./app/4qfibonaccieasy/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:4qfibonaccieasy"
+
+    - path: "./app/4qsiepinskicarpet/Main.hs"
+      component: "NoviSteps3Q:exe:4qsiepinskicarpet"
+
+    - path: "./app/4qsiepinskicarpet/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:4qsiepinskicarpet"
+
+    - path: "./app/4qsunukethecookiepicker/Main.hs"
+      component: "NoviSteps3Q:exe:4qsunukethecookiepicker"
+
+    - path: "./app/4qsunukethecookiepicker/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:4qsunukethecookiepicker"
+
+    - path: "./app/6qnutrients/Main.hs"
+      component: "NoviSteps3Q:exe:6qnutrients"
+
+    - path: "./app/6qnutrients/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:6qnutrients"
+
+    - path: "./app/6qpiano2/Main.hs"
+      component: "NoviSteps3Q:exe:6qpiano2"
+
+    - path: "./app/6qpiano2/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:6qpiano2"
+
+    - path: "./app/7qsanitizehands/Main.hs"
+      component: "NoviSteps3Q:exe:7qsanitizehands"
+
+    - path: "./app/7qsanitizehands/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:7qsanitizehands"
+
+    - path: "./app/7quppercaseandlowercase/Main.hs"
+      component: "NoviSteps3Q:exe:7quppercaseandlowercase"
+
+    - path: "./app/7quppercaseandlowercase/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:7quppercaseandlowercase"
+
     - path: "./app/Main.hs"
       component: "NoviSteps3Q:exe:NoviSteps3Q"
 
@@ -14,6 +62,12 @@ cradle:
 
     - path: "./app/diversityofscores/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:diversityofscores"
+
+    - path: "./app/hsi/Main.hs"
+      component: "NoviSteps3Q:exe:hsi"
+
+    - path: "./app/hsi/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:hsi"
 
     - path: "./app/manyreplacement/Main.hs"
       component: "NoviSteps3Q:exe:manyreplacement"

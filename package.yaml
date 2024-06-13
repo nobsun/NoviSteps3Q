@@ -66,6 +66,78 @@ library:
   source-dirs: src
 
 executables:
+  hsi:
+    main:               Main.hs
+    source-dirs:        app/hsi
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  4qfibonaccieasy:
+    main:               Main.hs
+    source-dirs:        app/4qfibonaccieasy
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  4qa16:
+    main:               Main.hs
+    source-dirs:        app/4qa16
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  4qsunukethecookiepicker:
+    main:               Main.hs
+    source-dirs:        app/4qsunukethecookiepicker
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  4qsiepinskicarpet:
+    main:               Main.hs
+    source-dirs:        app/4qsiepinskicarpet
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  6qnutrients:
+    main:               Main.hs
+    source-dirs:        app/6qnutrients
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  6qpiano2:
+    main:               Main.hs
+    source-dirs:        app/6qpiano2
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  7qsanitizehands:
+    main:               Main.hs
+    source-dirs:        app/7qsanitizehands
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  7quppercaseandlowercase:
+    main:               Main.hs
+    source-dirs:        app/7quppercaseandlowercase
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
   manyreplacement:
     main:            Main.hs
     source-dirs:     app/manyreplacement

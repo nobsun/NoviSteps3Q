@@ -65,6 +65,342 @@ library
     , vector
   default-language: GHC2021
 
+executable 4qa16
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/4qa16
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 4qfibonaccieasy
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/4qfibonaccieasy
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 4qsiepinskicarpet
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/4qsiepinskicarpet
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 4qsunukethecookiepicker
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/4qsunukethecookiepicker
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 6qnutrients
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/6qnutrients
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 6qpiano2
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/6qpiano2
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 7qsanitizehands
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/7qsanitizehands
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable 7quppercaseandlowercase
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/7quppercaseandlowercase
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
 executable NoviSteps3Q
   main-is: Main.hs
   other-modules:
@@ -113,6 +449,48 @@ executable diversityofscores
       Paths_NoviSteps3Q
   hs-source-dirs:
       app/diversityofscores
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      NoviSteps3Q
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , doctest
+    , filepath
+    , free
+    , gloss
+    , hspec
+    , main-tester
+    , recursion-schemes
+    , split
+    , time
+    , unicode-show
+    , utf8-string
+    , vector
+  default-language: GHC2021
+
+executable hsi
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/hsi
   default-extensions:
       ImplicitParams
       ImportQualifiedPost
