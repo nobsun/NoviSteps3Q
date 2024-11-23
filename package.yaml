@@ -21,23 +21,87 @@ description:         Please see the README on GitHub at <https://github.com/nobs
 
 dependencies:
 - base >= 4.7 && < 5
-- unicode-show
-- bytestring
 - utf8-string
-- time
+- unicode-show
 - hspec
 - main-tester
-- doctest
-- aeson
-- gloss
+- Cabal
+- Cabal-syntax
+- QuickCheck
+- adjunctions
 - array
+- attoparsec
+- bifunctors
+- binary
+- bitvec
+- bytestring
+- comonad
 - containers
-- free
-- recursion-schemes
-- vector
+- contravariant
+- deepseq
 - directory
+- distributive
+- exceptions
+- extra
+- fgl
 - filepath
+- free
+- ghc-bignum
+- ghc-boot-th
+- ghc-prim
+- hashable
+- heaps
+- indexed-traversable
+- indexed-traversable-instances
+- integer-gmp
+- integer-logarithms
+- kan-extensions
+- lens
+- linear-base
+- list-t
+- massiv
+- megaparsec
+- mono-traversable
+- mtl
+- mutable-containers
+- mwc-random
+- parallel
+- parsec
+- parser-combinators
+- pretty
+- primitive
+- process
+- profunctors
+- psqueues
+- random
+- reflection
+- regex-tdfa
+- safe-exceptions
+- scientific
+- semialign
+- semigroupoids
 - split
+- stm
+- strict
+- strict-lens
+- tagged
+- template-haskell
+- text
+- tf-random
+- these
+- these-lens
+- time
+- transformers
+- trifecta
+- unboxing-vector
+- unix
+- unordered-containers
+- utility-ht
+- vector
+- vector-algorithms
+- vector-stream
+- vector-th-unbox
+- xhtml
 
 language: GHC2021
 
@@ -66,6 +130,310 @@ library:
   source-dirs: src
 
 executables:
+  knapsack1:
+    main:               Main.hs
+    source-dirs:        app/knapsack1
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  grid1:
+    main:               Main.hs
+    source-dirs:        app/grid1
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  past202012openf:
+    main:               Main.hs
+    source-dirs:        app/past202012openf
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aclpracticea:
+    main:               Main.hs
+    source-dirs:        app/aclpracticea
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  joig2021openc:
+    main:               Main.hs
+    source-dirs:        app/joig2021openc
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  joi2007yof:
+    main:               Main.hs
+    source-dirs:        app/joi2007yof
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokua13:
+    main:               Main.hs
+    source-dirs:        app/tessokua13
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokua15:
+    main:               Main.hs
+    source-dirs:        app/tessokua15
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokua41:
+    main:               Main.hs
+    source-dirs:        app/tessokua41
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokua43:
+    main:               Main.hs
+    source-dirs:        app/tessokua43
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokua55:
+    main:               Main.hs
+    source-dirs:        app/tessokua55
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokua66:
+    main:               Main.hs
+    source-dirs:        app/tessokua66
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokub13:
+    main:               Main.hs
+    source-dirs:        app/tessokub13
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokub40:
+    main:               Main.hs
+    source-dirs:        app/tessokub40
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokub44:
+    main:               Main.hs
+    source-dirs:        app/tessokub44
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokub51:
+    main:               Main.hs
+    source-dirs:        app/tessokub51
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokuc05:
+    main:               Main.hs
+    source-dirs:        app/tessokuc05
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  tessokuc07:
+    main:               Main.hs
+    source-dirs:        app/tessokuc07
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam009:
+    main:               Main.hs
+    source-dirs:        app/aam009
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam018:
+    main:               Main.hs
+    source-dirs:        app/aam018
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam022:
+    main:               Main.hs
+    source-dirs:        app/aam022
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam023:
+    main:               Main.hs
+    source-dirs:        app/aam023
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam024:
+    main:               Main.hs
+    source-dirs:        app/aam024
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam025:
+    main:               Main.hs
+    source-dirs:        app/aam025
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam026:
+    main:               Main.hs
+    source-dirs:        app/aam026
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam027:
+    main:               Main.hs
+    source-dirs:        app/aam027
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam031:
+    main:               Main.hs
+    source-dirs:        app/aam031
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam033:
+    main:               Main.hs
+    source-dirs:        app/aam033
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  agc012a:
+    main:               Main.hs
+    source-dirs:        app/agc012a
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  agc011a:
+    main:               Main.hs
+    source-dirs:        app/agc011a
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam037:
+    main:               Main.hs
+    source-dirs:        app/aam037
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam039:
+    main:               Main.hs
+    source-dirs:        app/aam039
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam041:
+    main:               Main.hs
+    source-dirs:        app/aam041
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam043:
+    main:               Main.hs
+    source-dirs:        app/aam043
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam044:
+    main:               Main.hs
+    source-dirs:        app/aam044
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  aam050:
+    main:               Main.hs
+    source-dirs:        app/aam050
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  amm063:
+    main:               Main.hs
+    source-dirs:        app/amm063
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  agc009_a:
+    main:               Main.hs
+    source-dirs:        app/agc009_a
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
   hsi:
     main:               Main.hs
     source-dirs:        app/hsi

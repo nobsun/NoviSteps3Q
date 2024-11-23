@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.36.0.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -45,24 +45,88 @@ library
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans
   build-depends:
-      aeson
+      Cabal
+    , Cabal-syntax
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 4qa16
@@ -86,25 +150,89 @@ executable 4qa16
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 4qfibonaccieasy
@@ -128,25 +256,89 @@ executable 4qfibonaccieasy
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 4qsiepinskicarpet
@@ -170,25 +362,89 @@ executable 4qsiepinskicarpet
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 4qsunukethecookiepicker
@@ -212,25 +468,89 @@ executable 4qsunukethecookiepicker
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 6qnutrients
@@ -254,25 +574,89 @@ executable 6qnutrients
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 6qpiano2
@@ -296,25 +680,89 @@ executable 6qpiano2
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 7qsanitizehands
@@ -338,25 +786,89 @@ executable 7qsanitizehands
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable 7quppercaseandlowercase
@@ -380,25 +892,89 @@ executable 7quppercaseandlowercase
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable NoviSteps3Q
@@ -422,25 +998,2315 @@ executable NoviSteps3Q
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam009
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam009
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam018
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam018
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam022
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam022
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam023
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam023
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam024
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam024
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam025
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam025
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam026
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam026
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam027
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam027
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam031
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam031
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam033
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam033
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam037
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam037
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam039
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam039
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam041
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam041
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam043
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam043
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam044
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam044
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aam050
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aam050
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable aclpracticea
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/aclpracticea
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable agc009_a
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/agc009_a
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable agc011a
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/agc011a
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable agc012a
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/agc012a
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable amm063
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/amm063
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable diversityofscores
@@ -464,25 +3330,195 @@ executable diversityofscores
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable grid1
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/grid1
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable hsi
@@ -506,25 +3542,407 @@ executable hsi
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable joi2007yof
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/joi2007yof
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable joig2021openc
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/joig2021openc
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable knapsack1
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/knapsack1
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable manyreplacement
@@ -548,25 +3966,89 @@ executable manyreplacement
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable onetimeswap
@@ -590,25 +4072,195 @@ executable onetimeswap
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable past202012openf
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/past202012openf
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 executable sort
@@ -632,25 +4284,1361 @@ executable sort
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokua13
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokua13
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokua15
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokua15
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokua41
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokua41
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokua43
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokua43
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokua55
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokua55
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokua66
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokua66
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokub13
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokub13
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokub40
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokub40
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokub44
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokub44
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokub51
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokub51
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokuc05
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokuc05
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
+  default-language: GHC2021
+
+executable tessokuc07
+  main-is: Main.hs
+  other-modules:
+      Paths_NoviSteps3Q
+  hs-source-dirs:
+      app/tessokuc07
+  default-extensions:
+      ImplicitParams
+      ImportQualifiedPost
+      LambdaCase
+      LexicalNegation
+      MultiWayIf
+      NPlusKPatterns
+      OverloadedStrings
+      DataKinds
+      PolyKinds
+      NoStarIsType
+      TypeFamilyDependencies
+      UndecidableInstances
+  ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans -rtsopts
+  build-depends:
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
+    , array
+    , attoparsec
+    , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
+    , bytestring
+    , comonad
+    , containers
+    , contravariant
+    , deepseq
+    , directory
+    , distributive
+    , exceptions
+    , extra
+    , fgl
+    , filepath
+    , free
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
+    , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
+    , main-tester
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
+    , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
+    , time
+    , transformers
+    , trifecta
+    , unboxing-vector
+    , unicode-show
+    , unix
+    , unordered-containers
+    , utf8-string
+    , utility-ht
+    , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 test-suite NoviSteps3Q-doctest
@@ -676,25 +5664,90 @@ test-suite NoviSteps3Q-doctest
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
+    , distributive
     , doctest
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021
 
 test-suite NoviSteps3Q-test
@@ -720,23 +5773,87 @@ test-suite NoviSteps3Q-test
       UndecidableInstances
   ghc-options: -Wall -Wno-unticked-promoted-constructors -Wno-unused-imports -Wno-unused-top-binds -Wno-orphans
   build-depends:
-      NoviSteps3Q
-    , aeson
+      Cabal
+    , Cabal-syntax
+    , NoviSteps3Q
+    , QuickCheck
+    , adjunctions
     , array
+    , attoparsec
     , base >=4.7 && <5
+    , bifunctors
+    , binary
+    , bitvec
     , bytestring
+    , comonad
     , containers
+    , contravariant
+    , deepseq
     , directory
-    , doctest
+    , distributive
+    , exceptions
+    , extra
+    , fgl
     , filepath
     , free
-    , gloss
+    , ghc-bignum
+    , ghc-boot-th
+    , ghc-prim
+    , hashable
+    , heaps
     , hspec
+    , indexed-traversable
+    , indexed-traversable-instances
+    , integer-gmp
+    , integer-logarithms
+    , kan-extensions
+    , lens
+    , linear-base
+    , list-t
     , main-tester
-    , recursion-schemes
+    , massiv
+    , megaparsec
+    , mono-traversable
+    , mtl
+    , mutable-containers
+    , mwc-random
+    , parallel
+    , parsec
+    , parser-combinators
+    , pretty
+    , primitive
+    , process
+    , profunctors
+    , psqueues
+    , random
+    , reflection
+    , regex-tdfa
+    , safe-exceptions
+    , scientific
+    , semialign
+    , semigroupoids
     , split
+    , stm
+    , strict
+    , strict-lens
+    , tagged
+    , template-haskell
+    , text
+    , tf-random
+    , these
+    , these-lens
     , time
+    , transformers
+    , trifecta
+    , unboxing-vector
     , unicode-show
+    , unix
+    , unordered-containers
     , utf8-string
+    , utility-ht
     , vector
+    , vector-algorithms
+    , vector-stream
+    , vector-th-unbox
+    , xhtml
   default-language: GHC2021

@@ -16,40 +16,57 @@ import Data.Ord
 import Control.Arrow
 import Control.Applicative
 import Data.Array
+import Data.Bits
 import Data.Bool
 import Data.Char
 import Data.Function
 import Data.List
 import Text.Printf
 
-import Data.IntMap qualified as IM
+import Data.IntMap.Strict qualified as IM
 import Data.IntSet qualified as IS
-import Data.Map qualified as M
+import Data.Map.Strict qualified as M
 import Data.Set qualified as S
 import Data.Vector qualified as V
 
 import Debug.Trace qualified as Debug
 
 debug :: Bool
-debug = () /= ()
+debug = () == ()
 
 type I = Int
 type O = Int
 
-type Dom   = I
+type Dom   = (I,[[I]])
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (n,abcs) -> maximum 
+        [ popCount y 
+        | x <- [0 .. 2^n - 1 :: Int]
+        , 2 <= popCount x
+        , let y = foldl' (.|.) (0 :: Int) (check x <$> abcs)
+        , not (testBit y n)
+        ]
+        where
+            check x = \ case
+                abc@[a,b,c] -> case testBit x <$> abc of
+                    [True, True, True]  -> bit n
+                    [False, True, True] -> bit a
+                    [True, False, True] -> bit b
+                    [True, True, False] -> bit c
+                    _                   -> 0
+                _           -> invalid
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [n,_]:abcs -> case f (n, map (map pred) abcs) of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
+    
 
 main :: IO ()
 main = B.interact (encode . wrap solve . decode)

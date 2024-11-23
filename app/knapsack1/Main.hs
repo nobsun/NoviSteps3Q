@@ -36,19 +36,47 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = I
+type Dom   = (I,[(I,I)])
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (w,wvs) -> knapsack w wvs
+
+knapsack :: Int -> [(Int, Int)] -> Int
+knapsack w wvs = iter [(0,0)] (sort wvs)
+    where
+        iter acc []
+            = maximum (map snd acc)
+        iter acc (wv:rs)
+            = case dropWhile ((w <) . fst) (map (add wv) acc) of 
+                [] -> maximum (map snd acc)
+                acc' -> iter (acc' >< acc) rs
+        add (x,y) (x',y') = (x+x',y+y')
+
+(><) :: [(Int, Int)] -> [(Int, Int)] -> [(Int, Int)]
+[] >< ys = ys
+xs >< [] = xs
+xxs@(x@(wx,vx):xs) >< yys@(y@(wy,vy):ys) = case compare wx wy of
+    LT -> case compare vx vy of
+        LT -> y : (xxs >< ys)
+        EQ -> xxs >< ys
+        GT -> xxs >< ys
+    EQ -> case compare vx vy of
+        LT -> y : (xs >< ys)
+        EQ -> x : (xs >< ys)
+        GT -> x : (xs >< ys)
+    GT -> case compare vx vy of
+        LT -> xs >< yys 
+        EQ -> xs >< yys
+        GT -> x : (xs >< yys)
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [_,w]:wvs -> case f (w,map toTuple wvs) of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()

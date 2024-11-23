@@ -33,22 +33,35 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
+type I = String
 type O = Int
 
-type Dom   = I
+type Dom   = (Int,Int,[I])
 type Codom = O
 
 type Solver = Dom -> Codom
 
+norm :: Int -> Int
+norm = (`mod` (10^(9::Int) + 7))
+
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (h,w,rrs) -> b ! (h,w) where
+        b :: Array (Int,Int) Int
+        b = listArray ((0,0),(h,w)) $ zipWith phi (range ((0,0),(h,w))) (replicate (succ w) '#' ++ concatMap ('#':) rrs')
+        phi (i,j) = \ case
+            '#' -> 0
+            '?' -> 1
+            '.' | i == 0    -> 0
+                | j == 0    -> 0
+                | otherwise -> norm $ b ! (pred i,j) + b ! (i,pred j)
+            _               -> invalid
+        rrs' = ('?':tail (head rrs)):tail rrs
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [h,w]:rrs -> case f (read h, read w, concat rrs) of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()

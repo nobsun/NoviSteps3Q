@@ -36,19 +36,24 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = I
-type Codom = O
+type Dom   = [[I]]
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    qqs -> catMaybes $ snd $ mapAccumL phi IS.empty qqs where
+        phi s = \ case
+            [1,x] -> (IS.insert x s, Nothing)
+            [2,x] -> (IS.delete x s, Nothing)
+            [3,x] -> (s, Just $ fromMaybe -1 (IS.lookupGE x s))
+            _     -> invalid
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    _:qqs -> case f qqs of
+        rr -> (:[]) <$> rr
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
@@ -240,44 +245,3 @@ countif = iter 0
     where
         iter a p (x:xs) = iter (bool a (succ a) (p x)) p xs
         iter a _ []     = a
-
-{- Union-Find -}
-data UF
-    = UF
-    { parent :: IM.IntMap Int
-    , size   :: IM.IntMap Int
-    }
-
-newUF :: Int -> Int -> UF
-newUF s t
-    = UF
-    { parent = IM.fromList $ (,-1) <$> [s .. t]
-    , size   = IM.fromList $ (,1)  <$> [s .. t]
-    }
-
-root :: UF -> Int -> Int
-root uf = \ case
-    x | p == -1   -> x
-      | otherwise -> root uf p
-      where
-        p = uf.parent IM.! x
-
-unite :: UF -> Int -> Int -> UF
-unite uf x y = if
-    | x' == y' -> uf
-    | szx > szy -> update uf x' (y', szy)
-    | otherwise -> update uf y' (x', szx)
-    where
-        x' = root uf x
-        y' = root uf y
-        szx = uf.size IM.! x'
-        szy = uf.size IM.! y'
-        update :: UF -> Int -> (Int, Int) -> UF
-        update u a (b, szb)
-            = u
-            { parent = IM.insert b a u.parent
-            , size   = IM.adjust (+ szb) a u.size
-            }
-
-isSame :: UF -> Int -> Int -> Bool
-isSame uf x y = root uf x == root uf y

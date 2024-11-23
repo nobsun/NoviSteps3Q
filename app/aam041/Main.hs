@@ -36,19 +36,17 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = I
-type Codom = O
-
-type Solver = Dom -> Codom
+type Solver = (I,[(I,I)]) -> [O]
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (t,lrs) -> take t $ scanl1 (+) $ elems $ accumArray (+) 0 (0,t) $ ls ++ rs where
+        (ls,rs) = unzip $ map ((,1) *** (,-1)) lrs
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [t]:_:lrs -> case f (t,toTuple <$> lrs) of
+        rr -> map (:[]) rr
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
@@ -67,17 +65,9 @@ class InterfaceForOJS a where
     encode :: [[a]] -> B.ByteString
     encode = B.unlines . map showBs
 
-instance InterfaceForOJS B.ByteString where
-    readB = id
-    showB = id
-
 instance InterfaceForOJS Int where
     readB = readInt
     showB = showInt
-
-instance InterfaceForOJS Integer where
-    readB = readInteger
-    showB = showInteger
 
 instance InterfaceForOJS String where
     readB = readStr
@@ -99,12 +89,6 @@ readInt = fst . fromJust . B.readInt
 showInt :: Int -> B.ByteString
 showInt = B.pack . show
 
-readInteger :: B.ByteString -> Integer
-readInteger = fst . fromJust . B.readInteger
-
-showInteger :: Integer -> B.ByteString
-showInteger = B.pack . show
-
 readStr :: B.ByteString -> String
 readStr = B.unpack
 
@@ -119,21 +103,6 @@ showDbl = B.pack . show
 
 {- Bonsai -}
 
-{- debug -}
-trace :: String -> a -> a
-trace | debug     = Debug.trace
-      | otherwise = const id
-
-tracing :: Show a => a -> a
-tracing = trace . show <*> id
-
-{- error -}
-impossible :: a
-impossible = error "impossible"
-
-invalid :: a
-invalid = error "invalid input"
-
 {- |
 >>> combinations 2 "abcd"
 ["ab","ac","ad","bc","bd","cd"]
@@ -145,20 +114,6 @@ combinations = \ case
         []   -> []
         x:xs -> map (x:) (combinations n xs) ++ combinations (n+1) xs
     _ -> error "negative"
-
-nCr :: Integral a => a -> a -> a
-nCr n r
-    | n < 0  || r < 0  || n < r  = invalid
-    | n == 0 || r == 0 || n == r = 1
-    | otherwise                  = iter 1 n 1
-    where
-        r' = min r (n-r)
-        iter p m = \ case
-            q | q > r'    -> p
-              | otherwise -> iter (p * m `div` q) (pred m) (succ q)
-
-nPr :: Integral a => a -> a -> a
-nPr n r = product (genericTake r [n, pred n .. 1])
 
 {- |
 >>> spanCount odd [3,1,4,1,5,9]
@@ -195,13 +150,6 @@ splitEvery k = \ case
     [] -> []
     xs -> case splitAt k xs of
         (ys,zs) -> ys : splitEvery k zs
-
-{- |
->>> splice 5 "abcdefghij"
-["abcde","bcdef","cdefg","defgh","efghi","fghij"]
--}
-splice :: Int -> [a] -> [[a]]
-splice n = (!! n) . transpose . map inits . tails
 
 {- |
 >>> subsegments "yay"
@@ -241,43 +189,17 @@ countif = iter 0
         iter a p (x:xs) = iter (bool a (succ a) (p x)) p xs
         iter a _ []     = a
 
-{- Union-Find -}
-data UF
-    = UF
-    { parent :: IM.IntMap Int
-    , size   :: IM.IntMap Int
-    }
+{- error -}
+impossible :: a
+impossible = error "impossible"
 
-newUF :: Int -> Int -> UF
-newUF s t
-    = UF
-    { parent = IM.fromList $ (,-1) <$> [s .. t]
-    , size   = IM.fromList $ (,1)  <$> [s .. t]
-    }
+invalid :: a
+invalid = error "invalid input"
 
-root :: UF -> Int -> Int
-root uf = \ case
-    x | p == -1   -> x
-      | otherwise -> root uf p
-      where
-        p = uf.parent IM.! x
+{- debug -}
+trace :: String -> a -> a
+trace | debug     = Debug.trace
+      | otherwise = const id
 
-unite :: UF -> Int -> Int -> UF
-unite uf x y = if
-    | x' == y' -> uf
-    | szx > szy -> update uf x' (y', szy)
-    | otherwise -> update uf y' (x', szx)
-    where
-        x' = root uf x
-        y' = root uf y
-        szx = uf.size IM.! x'
-        szy = uf.size IM.! y'
-        update :: UF -> Int -> (Int, Int) -> UF
-        update u a (b, szb)
-            = u
-            { parent = IM.insert b a u.parent
-            , size   = IM.adjust (+ szb) a u.size
-            }
-
-isSame :: UF -> Int -> Int -> Bool
-isSame uf x y = root uf x == root uf y
+tracing :: Show a => a -> a
+tracing = trace . show <*> id

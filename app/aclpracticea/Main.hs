@@ -36,19 +36,24 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = I
-type Codom = O
+type Dom   = (I,[[I]])
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (n,qqs) -> catMaybes $ snd $ mapAccumL phi (newUF 0 (pred n)) qqs
+        where
+            phi uf = \ case
+                [0,u,v] -> (unite uf u v, Nothing)
+                [1,u,v] -> (uf, Just $ bool 0 1 (isSame uf u v))
+                _       -> invalid
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [n,_]:qqs -> case f (n,qqs) of
+        rr -> map (:[]) rr
     _   -> error "wrap: invalid input format"
 
 main :: IO ()

@@ -34,22 +34,20 @@ debug :: Bool
 debug = () /= ()
 
 type I = Int
-type O = Int
+type O = String
 
-type Dom   = I
-type Codom = O
-
-type Solver = Dom -> Codom
+type Solver = (V2d I, V2d I, V2d I, V2d I) -> O
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (a,b,c,d) -> bool "No" "Yes" $ segmentsIntersect a b c d
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
-    _   -> error "wrap: invalid input format"
+    xys -> case toTuple <$> xys of
+        [a,b,c,d] -> case f (a,b,c,d) of
+            r         -> [[r]]
+        _         -> error "wrap: invalid input format"
 
 main :: IO ()
 main = B.interact (encode . wrap solve . decode)
@@ -67,17 +65,11 @@ class InterfaceForOJS a where
     encode :: [[a]] -> B.ByteString
     encode = B.unlines . map showBs
 
-instance InterfaceForOJS B.ByteString where
-    readB = id
-    showB = id
-
 instance InterfaceForOJS Int where
+    readB :: B.ByteString -> Int
     readB = readInt
+    showB :: Int -> B.ByteString
     showB = showInt
-
-instance InterfaceForOJS Integer where
-    readB = readInteger
-    showB = showInteger
 
 instance InterfaceForOJS String where
     readB = readStr
@@ -99,12 +91,6 @@ readInt = fst . fromJust . B.readInt
 showInt :: Int -> B.ByteString
 showInt = B.pack . show
 
-readInteger :: B.ByteString -> Integer
-readInteger = fst . fromJust . B.readInteger
-
-showInteger :: Integer -> B.ByteString
-showInteger = B.pack . show
-
 readStr :: B.ByteString -> String
 readStr = B.unpack
 
@@ -119,21 +105,6 @@ showDbl = B.pack . show
 
 {- Bonsai -}
 
-{- debug -}
-trace :: String -> a -> a
-trace | debug     = Debug.trace
-      | otherwise = const id
-
-tracing :: Show a => a -> a
-tracing = trace . show <*> id
-
-{- error -}
-impossible :: a
-impossible = error "impossible"
-
-invalid :: a
-invalid = error "invalid input"
-
 {- |
 >>> combinations 2 "abcd"
 ["ab","ac","ad","bc","bd","cd"]
@@ -145,20 +116,6 @@ combinations = \ case
         []   -> []
         x:xs -> map (x:) (combinations n xs) ++ combinations (n+1) xs
     _ -> error "negative"
-
-nCr :: Integral a => a -> a -> a
-nCr n r
-    | n < 0  || r < 0  || n < r  = invalid
-    | n == 0 || r == 0 || n == r = 1
-    | otherwise                  = iter 1 n 1
-    where
-        r' = min r (n-r)
-        iter p m = \ case
-            q | q > r'    -> p
-              | otherwise -> iter (p * m `div` q) (pred m) (succ q)
-
-nPr :: Integral a => a -> a -> a
-nPr n r = product (genericTake r [n, pred n .. 1])
 
 {- |
 >>> spanCount odd [3,1,4,1,5,9]
@@ -195,13 +152,6 @@ splitEvery k = \ case
     [] -> []
     xs -> case splitAt k xs of
         (ys,zs) -> ys : splitEvery k zs
-
-{- |
->>> splice 5 "abcdefghij"
-["abcde","bcdef","cdefg","defgh","efghi","fghij"]
--}
-splice :: Int -> [a] -> [[a]]
-splice n = (!! n) . transpose . map inits . tails
 
 {- |
 >>> subsegments "yay"
@@ -241,43 +191,73 @@ countif = iter 0
         iter a p (x:xs) = iter (bool a (succ a) (p x)) p xs
         iter a _ []     = a
 
-{- Union-Find -}
-data UF
-    = UF
-    { parent :: IM.IntMap Int
-    , size   :: IM.IntMap Int
-    }
+{- error -}
+impossible :: a
+impossible = error "impossible"
 
-newUF :: Int -> Int -> UF
-newUF s t
-    = UF
-    { parent = IM.fromList $ (,-1) <$> [s .. t]
-    , size   = IM.fromList $ (,1)  <$> [s .. t]
-    }
+invalid :: a
+invalid = error "invalid input"
 
-root :: UF -> Int -> Int
-root uf = \ case
-    x | p == -1   -> x
-      | otherwise -> root uf p
-      where
-        p = uf.parent IM.! x
+{- debug -}
+trace :: String -> a -> a
+trace | debug     = Debug.trace
+      | otherwise = const id
 
-unite :: UF -> Int -> Int -> UF
-unite uf x y = if
-    | x' == y' -> uf
-    | szx > szy -> update uf x' (y', szy)
-    | otherwise -> update uf y' (x', szx)
+tracing :: Show a => a -> a
+tracing = trace . show <*> id
+
+{- 2D -}
+type V2d a = (a,a)
+add2d :: (Num a) => V2d a -> V2d a -> V2d a
+add2d (x1,y1) (x2,y2) = (x1 + x2, y1 + y2)
+sub2d :: (Num a) => V2d a -> V2d a -> V2d a
+sub2d = add2d . neg2d
+neg2d :: (Num a) => V2d a -> V2d a
+neg2d = negate *** negate
+
+cprod2d :: (Num a) => V2d a -> V2d a -> a
+cprod2d (x1,y1) (x2,y2) = x1 * y2 - x2 * y1
+
+{- | 線分の交差判定
+>>> p1 = (0,0) :: V2d Int
+>>> p2 = (2,4) :: V2d Int
+>>> p3 = (4,8) :: V2d Int
+>>> p4 = (0,5) :: V2d Int
+>>> p5 = (4,3) :: V2d Int
+>>> p6 = (6,2) :: V2d Int
+>>> segmentsIntersect p1 p3 p4 p6
+True
+>>> segmentsIntersect p1 p2 p4 p6
+True
+>>> segmentsIntersect p1 p3 p5 p6
+False
+>>> segmentsIntersect p4 p2 p5 p6
+False
+-}
+segmentsIntersect :: (Num a, Ord a) => V2d a -> V2d a -> V2d a -> V2d a -> Bool
+segmentsIntersect p1 p2 p3 p4
+    = or
+    [ d1 * d2 < 0 && d3 * d4 < 0
+    , d1 == 0 && onSegment2d p3 p4 p1
+    , d2 == 0 && onSegment2d p3 p4 p2
+    , d3 == 0 && onSegment2d p1 p2 p3
+    , d4 == 0 && onSegment2d p1 p2 p4
+    ]
     where
-        x' = root uf x
-        y' = root uf y
-        szx = uf.size IM.! x'
-        szy = uf.size IM.! y'
-        update :: UF -> Int -> (Int, Int) -> UF
-        update u a (b, szb)
-            = u
-            { parent = IM.insert b a u.parent
-            , size   = IM.adjust (+ szb) a u.size
-            }
+        d1 = direction2d p3 p4 p1
+        d2 = direction2d p3 p4 p2
+        d3 = direction2d p1 p2 p3
+        d4 = direction2d p1 p2 p4
 
-isSame :: UF -> Int -> Int -> Bool
-isSame uf x y = root uf x == root uf y
+direction2d :: (Num a) => V2d a -> V2d a -> V2d a -> a
+direction2d p1 p2 p3
+    = signum $ sub2d p1 p3 `cprod2d` sub2d p1 p2
+
+onSegment2d :: (Num a, Ord a) => V2d a -> V2d a -> V2d a -> Bool
+onSegment2d (x1,y1) (x2,y2) (x3,y3)
+    = and
+    [ min x1 x2 <= x3
+    , x3 <= max x1 x2
+    , min y1 y2 <= y3
+    , y3 <= max y1 y2
+    ]

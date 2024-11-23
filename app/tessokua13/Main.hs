@@ -36,19 +36,24 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = I
+type Dom   = (I,[I])
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (k,as) -> case mapAccumL phi (0, tail as) as of
+        (_,cs) -> sum cs
+        where
+            phi (c,rs) a = case spanCount (close a) rs of
+                (d,qs) -> ((pred d + c, qs), d + c)
+            close a r = r - a <= k
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [_,k]:as:_ -> case f (k,as) of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
@@ -160,6 +165,12 @@ nCr n r
 nPr :: Integral a => a -> a -> a
 nPr n r = product (genericTake r [n, pred n .. 1])
 
+{- | paramorphism
+-}
+para :: (a -> ([a],b) -> b) -> b -> [a] -> b
+para phi z = \ case
+    []   -> z
+    x:xs -> phi x (xs, para phi z xs)
 {- |
 >>> spanCount odd [3,1,4,1,5,9]
 (2,[4,1,5,9])
@@ -240,44 +251,3 @@ countif = iter 0
     where
         iter a p (x:xs) = iter (bool a (succ a) (p x)) p xs
         iter a _ []     = a
-
-{- Union-Find -}
-data UF
-    = UF
-    { parent :: IM.IntMap Int
-    , size   :: IM.IntMap Int
-    }
-
-newUF :: Int -> Int -> UF
-newUF s t
-    = UF
-    { parent = IM.fromList $ (,-1) <$> [s .. t]
-    , size   = IM.fromList $ (,1)  <$> [s .. t]
-    }
-
-root :: UF -> Int -> Int
-root uf = \ case
-    x | p == -1   -> x
-      | otherwise -> root uf p
-      where
-        p = uf.parent IM.! x
-
-unite :: UF -> Int -> Int -> UF
-unite uf x y = if
-    | x' == y' -> uf
-    | szx > szy -> update uf x' (y', szy)
-    | otherwise -> update uf y' (x', szx)
-    where
-        x' = root uf x
-        y' = root uf y
-        szx = uf.size IM.! x'
-        szy = uf.size IM.! y'
-        update :: UF -> Int -> (Int, Int) -> UF
-        update u a (b, szb)
-            = u
-            { parent = IM.insert b a u.parent
-            , size   = IM.adjust (+ szb) a u.size
-            }
-
-isSame :: UF -> Int -> Int -> Bool
-isSame uf x y = root uf x == root uf y

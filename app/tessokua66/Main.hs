@@ -22,6 +22,7 @@ import Data.Function
 import Data.List
 import Text.Printf
 
+-- import Data.Graph.Inductive qualified as G
 import Data.IntMap qualified as IM
 import Data.IntSet qualified as IS
 import Data.Map qualified as M
@@ -34,21 +35,26 @@ debug :: Bool
 debug = () /= ()
 
 type I = Int
-type O = Int
+type O = String
 
-type Dom   = I
-type Codom = O
+type Dom   = (I,[[I]])
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (n,qqs) -> catMaybes $ snd $ mapAccumL phi (newUF 1 n) qqs
+        where
+            phi uf = \ case
+                [1,u,v] -> (unite uf u v, Nothing)
+                [2,u,v] -> (uf, Just $ bool "No" "Yes" (isSame uf u v))
+                _       -> invalid
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [n,_]:qs -> case f (n, qs) of
+        rr -> (:[]) <$> rr
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
