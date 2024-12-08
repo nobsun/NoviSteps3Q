@@ -153,6 +153,24 @@ cradle:
     - path: "./app/aam050/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:aam050"
 
+    - path: "./app/abc002d/Main.hs"
+      component: "NoviSteps3Q:exe:abc002d"
+
+    - path: "./app/abc002d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc002d"
+
+    - path: "./app/abc005c/Main.hs"
+      component: "NoviSteps3Q:exe:abc005c"
+
+    - path: "./app/abc005c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc005c"
+
+    - path: "./app/abc007c/Main.hs"
+      component: "NoviSteps3Q:exe:abc007c"
+
+    - path: "./app/abc007c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc007c"
+
     - path: "./app/aclpracticea/Main.hs"
       component: "NoviSteps3Q:exe:aclpracticea"
 
@@ -177,6 +195,18 @@ cradle:
     - path: "./app/agc012a/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:agc012a"
 
+    - path: "./app/alds1_3_a/Main.hs"
+      component: "NoviSteps3Q:exe:alds1_3_a"
+
+    - path: "./app/alds1_3_a/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:alds1_3_a"
+
+    - path: "./app/alds1_3_b/Main.hs"
+      component: "NoviSteps3Q:exe:alds1_3_b"
+
+    - path: "./app/alds1_3_b/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:alds1_3_b"
+
     - path: "./app/amm063/Main.hs"
       component: "NoviSteps3Q:exe:amm063"
 
@@ -188,6 +218,12 @@ cradle:
 
     - path: "./app/diversityofscores/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:diversityofscores"
+
+    - path: "./app/encyclopediaofparentheses/Main.hs"
+      component: "NoviSteps3Q:exe:encyclopediaofparentheses"
+
+    - path: "./app/encyclopediaofparentheses/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:encyclopediaofparentheses"
 
     - path: "./app/grid1/Main.hs"
       component: "NoviSteps3Q:exe:grid1"
@@ -224,6 +260,12 @@ cradle:
 
     - path: "./app/manyreplacement/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:manyreplacement"
+
+    - path: "./app/nextletter/Main.hs"
+      component: "NoviSteps3Q:exe:nextletter"
+
+    - path: "./app/nextletter/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:nextletter"
 
     - path: "./app/onetimeswap/Main.hs"
       component: "NoviSteps3Q:exe:onetimeswap"
@@ -314,6 +356,12 @@ cradle:
 
     - path: "./app/tessokuc07/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:tessokuc07"
+
+    - path: "./app/vacation/Main.hs"
+      component: "NoviSteps3Q:exe:vacation"
+
+    - path: "./app/vacation/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:vacation"
 
     - path: "./test"
       component: "NoviSteps3Q:test:NoviSteps3Q-doctest"

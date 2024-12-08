@@ -130,6 +130,70 @@ library:
   source-dirs: src
 
 executables:
+  abc007c:
+    main:               Main.hs
+    source-dirs:        app/abc007c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc005c:
+    main:               Main.hs
+    source-dirs:        app/abc005c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc002d:
+    main:               Main.hs
+    source-dirs:        app/abc002d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  encyclopediaofparentheses:
+    main:               Main.hs
+    source-dirs:        app/encyclopediaofparentheses
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  vacation:
+    main:               Main.hs
+    source-dirs:        app/vacation
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  nextletter:
+    main:               Main.hs
+    source-dirs:        app/nextletter
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  alds1_3_a:
+    main:               Main.hs
+    source-dirs:        app/alds1_3_a
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  alds1_3_b:
+    main:               Main.hs
+    source-dirs:        app/alds1_3_b
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
   knapsack1:
     main:               Main.hs
     source-dirs:        app/knapsack1
