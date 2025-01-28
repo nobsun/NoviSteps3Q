@@ -171,6 +171,30 @@ cradle:
     - path: "./app/abc007c/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:abc007c"
 
+    - path: "./app/abc015c/Main.hs"
+      component: "NoviSteps3Q:exe:abc015c"
+
+    - path: "./app/abc015c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc015c"
+
+    - path: "./app/abc046d/Main.hs"
+      component: "NoviSteps3Q:exe:abc046d"
+
+    - path: "./app/abc046d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc046d"
+
+    - path: "./app/abc050c/Main.hs"
+      component: "NoviSteps3Q:exe:abc050c"
+
+    - path: "./app/abc050c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc050c"
+
+    - path: "./app/abc052d/Main.hs"
+      component: "NoviSteps3Q:exe:abc052d"
+
+    - path: "./app/abc052d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc052d"
+
     - path: "./app/aclpracticea/Main.hs"
       component: "NoviSteps3Q:exe:aclpracticea"
 

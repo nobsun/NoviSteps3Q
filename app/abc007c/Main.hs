@@ -33,22 +33,28 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
+type I = String
 type O = Int
 
-type Dom   = I
+type Dom   = (Int,Int,(Int,Int),(Int,Int),I)
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (h,w,(si,sj),(gi,gj),bs) -> case listArray ((1,1),(h,w)) bs of
+        ba -> case neighbors4Array (('.'==), ba)  of
+            ca -> fst $ spanCount (S.notMember (gi,gj)) $ bfs4Array ca (si,sj)
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [r,c]:[si,sj]:[gi,gj]:bs -> case f (read r
+                                       ,read c
+                                       ,(read si,read sj)
+                                       ,(read gi,read gj)
+                                       ,concat $ concat bs) of
+        rr -> [[rr]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
@@ -208,7 +214,7 @@ splice n = (!! n) . transpose . map inits . tails
 [["y","a","y"],["ya","ay"],["yay"]]
 -}
 subsegments :: [a] -> [[[a]]]
-subsegments = tail . transpose . map inits . transpose . tails 
+subsegments = drop 1 . transpose . map inits . transpose . tails 
 
 {- |
 >>> mex [8,23,9,0,12,11,1,10,13,7,41,4,14,21,5,17,3,19,2,6]
@@ -281,3 +287,50 @@ unite uf x y = if
 
 isSame :: UF -> Int -> Int -> Bool
 isSame uf x y = root uf x == root uf y
+
+{- scanArray -}
+scanArray :: (Ix i, Enum i)
+          => (a -> b)
+          -> (b -> a -> b)
+          -> (b -> b -> b -> a -> b)
+          -> Array (i,i) a -> Array (i,i) b
+scanArray f g h sa = ta where
+    ta  = listArray (bounds sa) (phi <$> assocs sa)
+    phi = \ case
+        (ij@(i,j),a)
+            | ij == ij0 -> f a
+            | i  == i0  -> g (ta ! second pred ij) a
+            | j  == j0  -> g (ta ! first  pred ij) a
+            | otherwise -> h (ta ! (pred *** pred) ij) (ta ! first  pred ij) (ta ! second pred ij) a
+            where
+                ij0 = fst (bounds sa)
+                i0  = fst ij0
+                j0  = snd ij0
+
+{- neighborsArray -}
+neighbors4 :: (Ix i, Enum i) => ((i,i),(i,i)) -> (i,i) -> [(i,i)]
+neighbors4 (ij0@(i0,j0),hw@(h,w)) = \ case
+    ij@(i,j) 
+        | ij == ij0    -> [                second succ ij,                first succ ij]
+        | ij == (i0,w) -> [second pred ij,                                first succ ij]
+        | ij == hw     -> [second pred ij,                 first pred ij               ]
+        | ij == (h,j0) -> [                second succ ij, first pred ij               ]
+        | i  == i0     -> [second pred ij, second succ ij,                first succ ij]
+        | j  == j0     -> [                second succ ij, first pred ij, first succ ij]
+        | i  == h      -> [second pred ij, second succ ij, first pred ij               ]
+        | j  == w      -> [second pred ij,                 first pred ij, first succ ij]
+        | otherwise    -> [second pred ij, second succ ij, first pred ij, first succ ij]
+
+neighbors4Array :: (Ix i, Enum i) => (a -> Bool, Array (i,i) a) -> Array (i,i) (S.Set (i,i))
+neighbors4Array (p,a) = listArray (bounds a) (S.fromList . filter (p . (a !)) . neighbors4 (bounds a) <$> range (bounds a))
+
+bfs4Array :: (Ix i, Enum i, Ord i)
+          => Array (i,i) (S.Set (i,i)) -> (i,i) -> [S.Set (i,i)]
+bfs4Array a ij = unfoldr psi (S.empty, S.singleton ij) where
+    psi = \ case
+        (vs,ns)
+            | S.null ns' -> Nothing
+            | otherwise  -> Just (ns, (vs',ns'))
+            where
+                ns' = S.difference (S.unions $ S.map (a !) ns) vs
+                vs' = S.union vs ns

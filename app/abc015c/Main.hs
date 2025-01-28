@@ -27,28 +27,28 @@ import Data.IntSet qualified as IS
 import Data.Map qualified as M
 import Data.Set qualified as S
 import Data.Vector qualified as V
-
+import Data.Bits
 import Debug.Trace qualified as Debug
 
 debug :: Bool
 debug = () /= ()
 
 type I = Int
-type O = Int
+type O = String
 
-type Dom   = I
+type Dom   = [[I]]
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    tss -> bool "Nothing" "Found" $ any (0 ==) $ foldl1' xor <$> cp tss
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    _:tss -> case f tss of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
@@ -68,29 +68,43 @@ class InterfaceForOJS a where
     encode = B.unlines . map showBs
 
 instance InterfaceForOJS B.ByteString where
+    readB :: B.ByteString -> B.ByteString
     readB = id
+    showB :: B.ByteString -> B.ByteString
     showB = id
 
 instance InterfaceForOJS Int where
+    readB :: B.ByteString -> Int
     readB = readInt
+    showB :: Int -> B.ByteString
     showB = showInt
 
 instance InterfaceForOJS Integer where
+    readB :: B.ByteString -> Integer
     readB = readInteger
+    showB :: Integer -> B.ByteString
     showB = showInteger
 
 instance InterfaceForOJS String where
+    readB :: B.ByteString -> String
     readB = readStr
+    showB :: String -> B.ByteString
     showB = showStr
 
 instance InterfaceForOJS Double where
+    readB :: B.ByteString -> Double
     readB = readDbl
+    showB :: Double -> B.ByteString
     showB = showDbl
 
 instance InterfaceForOJS Char where
+    readB :: B.ByteString -> Char
     readB = B.head
+    showB :: Char -> B.ByteString
     showB = B.singleton
+    readBs :: B.ByteString -> [Char]
     readBs = B.unpack
+    showBs :: [Char] -> B.ByteString
     showBs = B.pack
 
 readInt :: B.ByteString -> Int
@@ -337,21 +351,3 @@ cp = \ case
         where
             yss = cp xss
 
-{- modular arithmetic -}
-base :: Int
-base = 10^(9::Int) + 7
-
-madd :: Int -> Int -> Int
-madd !m !n = (m + n) `mod` base
-
-msub :: Int -> Int -> Int
-msub !m = madd m . negate
-
-mmul :: Int -> Int -> Int
-mmul !m !n = m * n `mod` base
-
-mexpt :: Int -> Int -> Int
-mexpt !b = \ case
-    0             -> 1
-    o | odd o     -> mmul b (mexpt b (pred o))
-      | otherwise -> mexpt (mmul b b) (o `div` 2)

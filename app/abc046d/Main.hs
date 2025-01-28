@@ -33,22 +33,28 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
+type I = Char
 type O = Int
 
-type Dom   = I
+type Dom   = [I]
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    s -> fst $ foldl' phi (0,(0,0)) s where
+        phi :: (Int,(Int,Int)) -> I -> (Int,(Int,Int))
+        phi (c,(p,g)) = \ case
+            'p' | p < g     -> (c,(succ p, g))
+                | otherwise -> (pred c,(p, succ g))
+            _   | p < g     -> (succ c,(succ p, g))
+                | otherwise -> (c,(p, succ g))
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    s:_ -> case f s of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
@@ -337,21 +343,3 @@ cp = \ case
         where
             yss = cp xss
 
-{- modular arithmetic -}
-base :: Int
-base = 10^(9::Int) + 7
-
-madd :: Int -> Int -> Int
-madd !m !n = (m + n) `mod` base
-
-msub :: Int -> Int -> Int
-msub !m = madd m . negate
-
-mmul :: Int -> Int -> Int
-mmul !m !n = m * n `mod` base
-
-mexpt :: Int -> Int -> Int
-mexpt !b = \ case
-    0             -> 1
-    o | odd o     -> mmul b (mexpt b (pred o))
-      | otherwise -> mexpt (mmul b b) (o `div` 2)

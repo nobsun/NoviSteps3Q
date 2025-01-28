@@ -36,19 +36,23 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = I
+type Dom   = (I,[I])
 type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    i -> undefined i
+    (n,as) -> case runLength $ sort as of
+        bms
+            | even n && all ((2 ==) . snd) bms && map fst bms `isPrefixOf` [1,3 ..] -> mexpt 2 (n `div` 2)
+            | odd  n && all ((2 ==) . snd) (drop 1 bms)                             -> mexpt 2 (n `div` 2)
+            | otherwise -> 0
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = \ case
-    _:_ -> case f undefined of
-        _rr -> [[]]
+    [n]:as:_ -> case f (n,as) of
+        r -> [[r]]
     _   -> error "wrap: invalid input format"
 
 main :: IO ()
