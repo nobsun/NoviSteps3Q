@@ -40,23 +40,33 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = I
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    n -> map (sum . match es) pats where
+            es = reverse 
+               $ map ((2 :: Int) ^) 
+               $ elemIndices 1 
+               $ reverse 
+               $ map digitToInt 
+               $ printf "%060b" n
+            pats = map (printf ("%0"++show d++"b")) [0 .. (2 :: Int)^d - 1] where
+                d = length es
+            match = zipWith cmb 
+            cmb x c = x * digitToInt c
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    [n]:_ -> n
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    rr -> singleton <$> rr
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom
