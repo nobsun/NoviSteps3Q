@@ -189,11 +189,107 @@ cradle:
     - path: "./app/abc050c/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:abc050c"
 
+    - path: "./app/abc052c/Main.hs"
+      component: "NoviSteps3Q:exe:abc052c"
+
+    - path: "./app/abc052c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc052c"
+
     - path: "./app/abc052d/Main.hs"
       component: "NoviSteps3Q:exe:abc052d"
 
     - path: "./app/abc052d/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:abc052d"
+
+    - path: "./app/abc053d/Main.hs"
+      component: "NoviSteps3Q:exe:abc053d"
+
+    - path: "./app/abc053d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc053d"
+
+    - path: "./app/abc054c/Main.hs"
+      component: "NoviSteps3Q:exe:abc054c"
+
+    - path: "./app/abc054c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc054c"
+
+    - path: "./app/abc062c/Main.hs"
+      component: "NoviSteps3Q:exe:abc062c"
+
+    - path: "./app/abc062c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc062c"
+
+    - path: "./app/abc070d/Main.hs"
+      component: "NoviSteps3Q:exe:abc070d"
+
+    - path: "./app/abc070d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc070d"
+
+    - path: "./app/abc240d/Main.hs"
+      component: "NoviSteps3Q:exe:abc240d"
+
+    - path: "./app/abc240d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc240d"
+
+    - path: "./app/abc247d/Main.hs"
+      component: "NoviSteps3Q:exe:abc247d"
+
+    - path: "./app/abc247d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc247d"
+
+    - path: "./app/abc259c/Main.hs"
+      component: "NoviSteps3Q:exe:abc259c"
+
+    - path: "./app/abc259c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc259c"
+
+    - path: "./app/abc269c/Main.hs"
+      component: "NoviSteps3Q:exe:abc269c"
+
+    - path: "./app/abc269c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc269c"
+
+    - path: "./app/abc283d/Main.hs"
+      component: "NoviSteps3Q:exe:abc283d"
+
+    - path: "./app/abc283d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc283d"
+
+    - path: "./app/abc289c/Main.hs"
+      component: "NoviSteps3Q:exe:abc289c"
+
+    - path: "./app/abc289c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc289c"
+
+    - path: "./app/abc307d/Main.hs"
+      component: "NoviSteps3Q:exe:abc307d"
+
+    - path: "./app/abc307d/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc307d"
+
+    - path: "./app/abc358c/Main.hs"
+      component: "NoviSteps3Q:exe:abc358c"
+
+    - path: "./app/abc358c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc358c"
+
+    - path: "./app/abc374c/Main.hs"
+      component: "NoviSteps3Q:exe:abc374c"
+
+    - path: "./app/abc374c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc374c"
+
+    - path: "./app/abc389c/Main.hs"
+      component: "NoviSteps3Q:exe:abc389c"
+
+    - path: "./app/abc389c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc389c"
+
+    - path: "./app/abc391c/Main.hs"
+      component: "NoviSteps3Q:exe:abc391c"
+
+    - path: "./app/abc391c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc391c"
 
     - path: "./app/aclpracticea/Main.hs"
       component: "NoviSteps3Q:exe:aclpracticea"

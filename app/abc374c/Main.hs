@@ -35,28 +35,30 @@ import Data.Vector qualified as V
 import Debug.Trace qualified as Debug
 
 debug :: Bool
-debug = () /= ()
+debug = () == ()
 
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = [I]
+type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    a:as -> uncurry max $ minimumBy (comparing $ abs . uncurry subtract) $ foldr phi [(a,0),(0,a)] as where
+        phi x ys = concatMap (\ (y,z) -> [(x+y,z), (y,x+z)]) ys
+    []   -> invalid $ show @Int __LINE__
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    _:as:_ -> as
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    r -> [[r]]
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

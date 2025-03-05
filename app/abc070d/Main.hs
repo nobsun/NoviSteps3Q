@@ -1,4 +1,3 @@
-{-# LANGUAGE CPP #-}
 {-# LANGUAGE GHC2021 #-}
 {-# LANGUAGE ImplicitParams #-}
 {-# LANGUAGE ImportQualifiedPost #-}
@@ -16,9 +15,7 @@ import Data.Ord
 
 import Control.Arrow
 import Control.Applicative
-import Control.Monad
 import Data.Array
-import Data.Bits
 import Data.Bool
 import Data.Char
 import Data.Function
@@ -29,8 +26,8 @@ import Data.IntMap qualified as IM
 import Data.IntSet qualified as IS
 import Data.Map qualified as M
 import Data.Set qualified as S
-import Data.Tree qualified as T
 import Data.Vector qualified as V
+import Data.Graph qualified as G
 
 import Debug.Trace qualified as Debug
 
@@ -40,26 +37,29 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = (I,I,[((I,I),I)],[(I,I)])
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (n,k,es,qs) -> undefined
 
-toDom :: [[I]] -> Dom
-toDom = \ case
-    _:_ -> ()
-    _   -> invalid $ "toDom:" ++ show @Int __LINE__
-
-fromCodom :: Codom -> [[O]]
-fromCodom = \ case
-    _rr -> [[]]
+buildTree :: M
 
 wrap :: Solver -> ([[I]] -> [[O]])
-wrap f = fromCodom . f . toDom
+wrap f = \ case
+    [n]:rss -> case splitAt (pred n) rss of
+        (es,[_,k]:qs) -> case f (n,k,toTuple' <$> es,toTuple <$> qs) of
+            rr -> singleton <$> rr
+        _             -> error "wrap: invalid input format"
+    _   -> error "wrap: invalid input format"
+
+toTuple' :: [a] -> ((a,a),a)
+toTuple' = \ case
+    x:y:z:_ -> ((x,y),z)
+    _       -> invalid
 
 main :: IO ()
 main = B.interact (encode . wrap solve . decode)
@@ -138,11 +138,11 @@ tracing :: Show a => a -> a
 tracing = trace . show <*> id
 
 {- error -}
-impossible :: String -> a
-impossible msg = error $ msg ++ ", impossible"
+impossible :: a
+impossible = error "impossible"
 
-invalid :: String -> a
-invalid msg = error $ msg ++ ", invalid input"
+invalid :: a
+invalid = error "invalid input"
 
 {- |
 >>> combinations 2 "abcd"
@@ -154,11 +154,11 @@ combinations = \ case
     n+1 -> \ case 
         []   -> []
         x:xs -> map (x:) (combinations n xs) ++ combinations (n+1) xs
-    _ -> error $ "combinations: " ++ show @Int __LINE__ ++ ", negative"
+    _ -> error "negative"
 
 nCr :: Integral a => a -> a -> a
 nCr n r
-    | n < 0  || r < 0  || n < r  = error $ "nCr: " ++ show @Int __LINE__ ++ ", negative "
+    | n < 0  || r < 0  || n < r  = invalid
     | n == 0 || r == 0 || n == r = 1
     | otherwise                  = iter 1 n 1
     where
@@ -240,10 +240,15 @@ minform a (n,xs)
 toTuple :: [a] -> (a,a)
 toTuple = \ case
     x:y:_ -> (x,y)
-    _     -> error "toTuple: too short list"
+    _     -> invalid
 
 fromTuple :: (a,a) -> [a]
 fromTuple (x,y) = [x,y]
+
+toTriple :: [a] -> (a,a,a)
+toTriple = \ case
+    x:y:z:_ -> (x,y,z)
+    _       -> invalid
 
 countif :: (a -> Bool) -> [a] -> Int
 countif = iter 0

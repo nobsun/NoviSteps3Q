@@ -40,23 +40,33 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = [I]
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    as -> iter [] [] as where
+        iter cs ss = \ case
+            []   -> reverse cs
+            y:ys -> case ss of
+                []       -> iter ((1 :: Int) : cs) [(y, 1 :: Int)] ys
+                (x,n):xs -> case cs of
+                    []       -> impossible $ show @Int __LINE__
+                    c:_
+                        | x /= y      -> iter (succ c:cs) ((y,1):ss) ys
+                        | x == succ n -> iter (c - n :cs) xs ys
+                        | otherwise   -> iter (succ c:cs) ((x,succ n):xs) ys
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    _:as:_ -> as
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    rr -> singleton <$> rr
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

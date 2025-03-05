@@ -37,26 +37,37 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
+type I = String
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = (Int, [I])
+type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (m,ss) -> fst 
+            $ fromJust 
+            $ find (((2^m - 1 :: Int) ==) . snd)
+            $ map ((,) . snd <*> foldr1 (.|.) . fst) 
+            $ sortBy (comparing snd) 
+            $ map ((,) <*> length) 
+            $ drop 1 
+            $ subsequences 
+            $ map phi ss
+        where
+            phi = foldl' setBit 0 . elemIndices 'o'
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    [_,m]:sss -> (read m,concat sss)
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    r -> [[r]]
+
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

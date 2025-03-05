@@ -37,26 +37,35 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
-type O = Int
+type I = Char
+type O = Char
 
-type Dom   = ()
-type Codom = ()
+type Dom   = [I]
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    s -> iter (0 :: Int) [] s where
+        iter c ss = \ case
+            []   -> reverse ss
+            x:xs -> case x of
+                '('             -> iter (succ c) (x:ss) xs
+                ')' | c == 0    -> iter c (x:ss) xs
+                    | otherwise -> case dropWhile ('(' /=) ss of
+                        _:ts         -> iter (pred c) ts xs
+                        []           -> impossible $ show @Int __LINE__
+                _               -> iter c (x:ss) xs
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    _:s:_ -> s
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    rr -> [rr]
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

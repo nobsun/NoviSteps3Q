@@ -37,26 +37,33 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
-type O = Int
+type I = Char
+type O = Char
 
-type Dom   = ()
-type Codom = ()
+type Dom   = [I]
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    s -> bool "No" "Yes" $ iter S.empty [] s where
+        iter ss st = \ case
+            []     -> True
+            '(':xs -> iter ss ('(':st) xs
+            ')':xs -> case span isLower st of
+                (ps,_:qs) -> iter (foldl' (flip S.delete) ss ps) qs xs
+                _         -> invalid $ show @Int __LINE__
+            x:xs -> S.notMember x ss && iter (S.insert x ss) (x:st) xs
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    s:_ -> s
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    rr -> [rr]
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

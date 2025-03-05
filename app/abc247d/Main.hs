@@ -29,6 +29,8 @@ import Data.IntMap qualified as IM
 import Data.IntSet qualified as IS
 import Data.Map qualified as M
 import Data.Set qualified as S
+import Data.Sequence qualified as Q
+import Data.Sequence.Internal qualified as Q
 import Data.Tree qualified as T
 import Data.Vector qualified as V
 
@@ -40,23 +42,33 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = [[I]]
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    qqs -> iter 0 Q.empty qqs where
+        iter a sq = \ case
+            [] -> []
+            (1:x:c:_):qs -> iter a (sq Q.|> (x,c)) qs
+            (2:c:_):qs   -> case Q.viewl sq of
+                (x,c') Q.:< sq'
+                    | c == c'   -> (a + x * c) : iter 0 sq' qs
+                    | c <  c'   -> (a + x * c) : iter 0 ((x,subtract c c') Q.<| sq') qs
+                    | otherwise -> iter (a + x * c') sq' ([2, c - c'] : qs)
+                _            -> invalid $ show @Int __LINE__
+            _            -> invalid $ show @Int __LINE__
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    _:qqs -> qqs
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    rr -> singleton <$> rr
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

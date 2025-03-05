@@ -130,6 +130,134 @@ library:
   source-dirs: src
 
 executables:
+  abc247d:
+    main:               Main.hs
+    source-dirs:        app/abc247d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc389c:
+    main:               Main.hs
+    source-dirs:        app/abc389c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc391c:
+    main:               Main.hs
+    source-dirs:        app/abc391c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc269c:
+    main:               Main.hs
+    source-dirs:        app/abc269c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc289c:
+    main:               Main.hs
+    source-dirs:        app/abc289c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc358c:
+    main:               Main.hs
+    source-dirs:        app/abc358c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc374c:
+    main:               Main.hs
+    source-dirs:        app/abc374c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc283d:
+    main:               Main.hs
+    source-dirs:        app/abc283d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc307d:
+    main:               Main.hs
+    source-dirs:        app/abc307d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc240d:
+    main:               Main.hs
+    source-dirs:        app/abc240d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc259c:
+    main:               Main.hs
+    source-dirs:        app/abc259c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc070d:
+    main:               Main.hs
+    source-dirs:        app/abc070d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc062c:
+    main:               Main.hs
+    source-dirs:        app/abc062c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc054c:
+    main:               Main.hs
+    source-dirs:        app/abc054c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc053d:
+    main:               Main.hs
+    source-dirs:        app/abc053d
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
+  abc052c:
+    main:               Main.hs
+    source-dirs:        app/abc052c
+    ghc-options:
+    - -rtsopts
+    dependencies:
+    - NoviSteps3Q
+
   abc052d:
     main:               Main.hs
     source-dirs:        app/abc052d

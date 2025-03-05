@@ -40,23 +40,30 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = (I,[[I]])
+type Codom = O
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (n,bss) -> case map S.unions $ drop 1 $ subsequences $ map S.fromList bss of
+        ss      -> length [ () | s <- ss, all (flip S.member s) ns]
+            where
+                ns = [1 .. n]
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    [n,_]:rss -> (n,iter (drop 1 rss) (drop 3 rss))
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
+    where
+        iter as bs = case bs of
+            [] -> take 1 as
+            _  -> take 1 as ++ iter bs (drop 2 bs)
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    r -> [[r]]
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

@@ -25,38 +25,68 @@ import Data.Function
 import Data.List
 import Text.Printf
 
-import Data.IntMap qualified as IM
+import Data.IntMap.Strict qualified as IM
 import Data.IntSet qualified as IS
-import Data.Map qualified as M
+import Data.Map.Strict qualified as M
 import Data.Set qualified as S
 import Data.Tree qualified as T
 import Data.Vector qualified as V
+import Data.Vector.Mutable qualified as MV
 
 import Debug.Trace qualified as Debug
 
 debug :: Bool
-debug = () /= ()
+debug = () == ()
 
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = [[I]]
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    qqs -> iter (IM.empty @Int) (IM.empty @Int) (0 :: Int) qqs where
+        iter phs hcs cnt = \ case
+            []           -> []
+            (2:_):qs     -> cnt : iter phs hcs cnt qs
+            (1:p:h:_):qs -> iter phs' hcs' cnt' qs where
+                h0   = IM.findWithDefault p p phs
+                phs' = IM.insert p h phs
+                ch0  = IM.findWithDefault 1 h0 hcs
+                ch   = IM.findWithDefault 1 h  hcs
+                hcs' = IM.insert h (succ ch) (IM.insert h0 (pred ch0) hcs)
+                cnt' = bool id pred (ch0 == 2) $ bool id succ (ch == 1) cnt
+            _            -> invalid $ show @Int __LINE__
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
-    _   -> invalid $ "toDom:" ++ show @Int __LINE__
+    _:qqs -> qqs
+    _     -> invalid $ "toDom:" ++ show @Int __LINE__-- solve = \ case
+--     (!n,!qqs) -> case mapAccumL phi (pq,qp,0) qqs of
+--         (_,!qrs) -> concat qrs
+--         where
+--             pq = IM.fromList $ map (id &&& id) [1 .. n]
+--             qp = IM.fromList $ map (,1::Int) [1 .. n]
+--             phi (!ps,!qs,!ss) = \ case 
+--                 [2]       -> ((ps,qs,ss),[ss])
+--                 [1,!a,!b] -> ((ps',qs',ss'),[])
+--                     where
+--                         !p  = ps IM.! a
+--                         !q0 = qs IM.! p
+--                         !q1 = qs IM.! b
+--                         !ps' = IM.insert a b ps
+--                         !qs' = IM.insert p (pred q0) (IM.insert b (succ q1) qs)
+--                         !ss' = bool id pred (q0 == 2) (bool id succ (q1 == 1) ss)
+--                 _       -> invalid $ show @Int __LINE__
+
+
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    !rr -> singleton <$> rr
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom
@@ -78,33 +108,47 @@ class InterfaceForOJS a where
     encode = B.unlines . map showBs
 
 instance InterfaceForOJS B.ByteString where
+    readB :: B.ByteString -> B.ByteString
     readB = id
+    showB :: B.ByteString -> B.ByteString
     showB = id
 
 instance InterfaceForOJS Int where
+    readB :: B.ByteString -> Int
     readB = readInt
+    showB :: Int -> B.ByteString
     showB = showInt
 
 instance InterfaceForOJS Integer where
+    readB :: B.ByteString -> Integer
     readB = readInteger
+    showB :: Integer -> B.ByteString
     showB = showInteger
 
 instance InterfaceForOJS String where
+    readB :: B.ByteString -> String
     readB = readStr
+    showB :: String -> B.ByteString
     showB = showStr
 
 instance InterfaceForOJS Double where
+    readB :: B.ByteString -> Double
     readB = readDbl
+    showB :: Double -> B.ByteString
     showB = showDbl
 
 instance InterfaceForOJS Char where
+    readB :: B.ByteString -> Char
     readB = B.head
+    showB :: Char -> B.ByteString
     showB = B.singleton
+    readBs :: B.ByteString -> [Char]
     readBs = B.unpack
+    showBs :: [Char] -> B.ByteString
     showBs = B.pack
 
 readInt :: B.ByteString -> Int
-readInt = fst . fromJust . B.readInt
+readInt !b = fst $! fromJust $! B.readInt b
 
 showInt :: Int -> B.ByteString
 showInt = B.pack . show

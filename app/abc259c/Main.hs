@@ -37,26 +37,35 @@ import Debug.Trace qualified as Debug
 debug :: Bool
 debug = () /= ()
 
-type I = Int
-type O = Int
+type I = String
+type O = String
 
-type Dom   = ()
-type Codom = ()
+type Dom   = (String, String)
+type Codom = String
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (s,t) -> bool "No" "Yes" $ iter (runLength s) (runLength t) where
+        iter [] [] = True
+        iter _  [] = False
+        iter [] _  = False
+        iter ((x,m):xs) ((y,n):ys) = if
+            | x /= y    -> False
+            | m == n    -> iter xs ys
+            | m >  n    -> False
+            | m >  1    -> iter xs ys
+            | otherwise -> False
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    [s]:[t]:_ -> (s,t)
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    r -> [[r]]
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom

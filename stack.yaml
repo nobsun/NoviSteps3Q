@@ -1,5 +1,5 @@
 # resolver: lts-23.1
-snapshot: nightly-2024-12-22
+snapshot: nightly-2025-03-01
 
 packages:
 - .
