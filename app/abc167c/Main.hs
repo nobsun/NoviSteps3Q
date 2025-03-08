@@ -40,23 +40,31 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = (I,I,[[I]])
+type Codom = O
 
 type Solver = Dom -> Codom
 
+
 solve :: Solver
 solve = \ case
-    () -> ()
+    (n,x,cass) -> case cas of
+        [] -> -1
+        _  -> minimum $ concatMap (take 1) cas
+        where
+            cas = filter (all (x <=) . drop 1)
+                $ map (foldl1' (zipWith (+)))
+                $ selectPat cass <$> pats
+            pats = bitPat n <$> [1 :: Int .. 2^n - 1]
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    [n,_,x]:cass -> (n,x,cass)
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    r -> [[r]]
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom
@@ -380,8 +388,8 @@ primesLT1000
       ,907,911,919,929,937,941,947,953,967,971,977,983,991,997]
 
 {- bits -}
-bitPat :: Bits a => a -> Int -> [Bool]
-bitPat a w = map (testBit a) $ reverse [0 .. pred w]
+bitPat :: Bits a => Int -> a -> [Bool]
+bitPat w a = map (testBit a) $ reverse [0 .. pred w]
 
-selectPat :: [Bool] -> [a] -> [a]
-selectPat pat = catMaybes . zipWith (bool (const Nothing) Just) pat
+selectPat :: [a] -> [Bool] -> [a]
+selectPat xs pat = catMaybes . zipWith (bool (const Nothing) Just) pat $ xs
