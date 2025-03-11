@@ -309,6 +309,12 @@ cradle:
     - path: "./app/abc374c/Paths_NoviSteps3Q.hs"
       component: "NoviSteps3Q:exe:abc374c"
 
+    - path: "./app/abc384c/Main.hs"
+      component: "NoviSteps3Q:exe:abc384c"
+
+    - path: "./app/abc384c/Paths_NoviSteps3Q.hs"
+      component: "NoviSteps3Q:exe:abc384c"
+
     - path: "./app/abc389c/Main.hs"
       component: "NoviSteps3Q:exe:abc389c"
 
