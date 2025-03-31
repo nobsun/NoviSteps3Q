@@ -25,6 +25,7 @@ import Data.Function
 import Data.List
 import Text.Printf
 
+import Data.Graph qualified as G
 import Data.IntMap qualified as IM
 import Data.IntSet qualified as IS
 import Data.Map qualified as M
@@ -33,6 +34,7 @@ import Data.Tree qualified as T
 import Data.Vector qualified as V
 
 import Debug.Trace qualified as Debug
+import Data.Tree (Tree(rootLabel))
 
 debug :: Bool
 debug = () /= ()
@@ -40,23 +42,35 @@ debug = () /= ()
 type I = Int
 type O = Int
 
-type Dom   = ()
-type Codom = ()
+type Dom   = (I,[(I,I,I)],I,[(I,I)])
+type Codom = [O]
 
 type Solver = Dom -> Codom
 
 solve :: Solver
 solve = \ case
-    () -> ()
+    (n,abcs,k,xys) -> phi <$> xys where
+        phi (x,y)   = da ! x + da ! y
+        da          = array (1,n) $ T.flatten $ T.unfoldTree psi (0,k,0)
+        psi (p,v,c) = ((v,c), [ (v,u,c') | (u,d) <- gr ! v, p /= u, let !c' = c + d ])
+        gr          = accumArray (flip (:)) [] (1,n) (dbl =<< abcs)
+        dbl (a,b,c) = [(a,(b,c)),(b,(a,c))]
 
 toDom :: [[I]] -> Dom
 toDom = \ case
-    _:_ -> ()
+    [n]:dds -> case splitAt (n-1) dds of
+        (abcs,[_,k]:xys) -> (n, toTriple <$> abcs, k, toTuple <$> xys)
+        _                -> invalid $ "toDom:" ++ show @Int __LINE__
     _   -> invalid $ "toDom:" ++ show @Int __LINE__
+
+toTriple :: [a] -> (a,a,a)
+toTriple = \ case
+    x:y:z:_ -> (x,y,z)
+    _       -> invalid $ show @Int __LINE__
 
 fromCodom :: Codom -> [[O]]
 fromCodom = \ case
-    _rr -> [[]]
+    rr -> singleton <$> rr
 
 wrap :: Solver -> ([[I]] -> [[O]])
 wrap f = fromCodom . f . toDom
